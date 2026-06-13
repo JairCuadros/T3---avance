@@ -1,0 +1,9 @@
+﻿services:
+  - type: web
+    name: sistema-reconocimiento-facial
+    env: python
+    buildCommand: |
+      python -m pip install --upgrade pip
+      pip install cmake
+      pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
